@@ -12,7 +12,7 @@
         <!--Hamburger View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="HamburgerViewController" customModule="HamburgerMenu" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HamburgerViewController" id="BYZ-38-t0r" customClass="HamburgerViewController" customModule="HamburgerMenu" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -28,6 +28,10 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C3X-ro-iee">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="uss-ef-Mvo" appends="YES" id="WSR-hd-U8l"/>
+                                </connections>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -44,17 +48,23 @@
                     </view>
                     <connections>
                         <outlet property="contentView" destination="C3X-ro-iee" id="n8M-tA-D55"/>
+                        <outlet property="leftMarginConstraint" destination="Od4-OZ-H43" id="vjj-eI-LiW"/>
                         <outlet property="menuView" destination="42K-rn-ryG" id="AXI-Lo-LXQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="uss-ef-Mvo">
+                    <connections>
+                        <action selector="onPan:" destination="BYZ-38-t0r" id="qGc-mG-Tic"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="32.799999999999997" y="38.23088455772114"/>
         </scene>
         <!--Menu View Controller-->
         <scene sceneID="t1b-9R-QUv">
             <objects>
-                <viewController id="8Dd-jN-NVO" customClass="MenuViewController" customModule="HamburgerMenu" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MenuViewController" id="8Dd-jN-NVO" customClass="MenuViewController" customModule="HamburgerMenu" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="BmW-ZB-dFL"/>
                         <viewControllerLayoutGuide type="bottom" id="VI5-pf-oMV"/>
@@ -62,12 +72,12 @@
                     <view key="view" contentMode="scaleToFill" id="7Sm-Df-Gsn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.2758851712" green="0.51953361139999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oKa-uS-YZn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="833" y="38"/>
+            <point key="canvasLocation" x="750" y="38"/>
         </scene>
     </scenes>
 </document>

@@ -10,6 +10,11 @@ import UIKit
 
 class MenuViewController: UIViewController {
     
+    var hamburgerViewController: HamburgerViewController!
+    
+    var viewControllers = [UIViewController]()
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
