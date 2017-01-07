@@ -30,6 +30,6 @@ extension MenuItem: Equatable {
 }
 
 enum IconName: String {
-    case circle, circleFilled, circleColor
     case triangle, triangleFilled, triangleColor
+    case hexagon, hexagonFilled, hexagonColor 
 }

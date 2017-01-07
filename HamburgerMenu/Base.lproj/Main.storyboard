@@ -73,6 +73,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DFi-iO-j4q">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="213"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.91547165119363394" green="0.91547165119363394" blue="0.91547165119363394" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar" translatesAutoresizingMaskIntoConstraints="NO" id="J4k-5N-Gqh">
                                 <rect key="frame" x="125" y="44" width="125" height="125"/>
                                 <constraints>
@@ -80,17 +85,14 @@
                                     <constraint firstAttribute="height" constant="125" id="Uip-NH-ucm"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mary Martinez" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RWL-Cc-lci">
-                                <rect key="frame" x="132.5" y="179" width="110.5" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="M5b-LV-f85"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Puka" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RWL-Cc-lci">
+                                <rect key="frame" x="164" y="179" width="49" height="26"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="21"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ouH-5Z-C8V">
-                                <rect key="frame" x="58" y="269" width="259" height="398"/>
+                                <rect key="frame" x="58" y="244.5" width="259" height="422.5"/>
                                 <color key="backgroundColor" red="0.2758851712" green="0.51953361139999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="259" id="iug-Oc-PGz"/>
@@ -116,26 +118,16 @@
                                     <outlet property="delegate" destination="8Dd-jN-NVO" id="6gy-9w-dPk"/>
                                 </connections>
                             </collectionView>
-                            <searchBar contentMode="redraw" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="WCH-6g-DWf">
-                                <rect key="frame" x="50" y="225" width="275" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="275" id="eQs-f3-tI4"/>
-                                    <constraint firstAttribute="height" constant="44" id="oQg-Qe-TQS"/>
-                                </constraints>
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" red="0.2758851712" green="0.51953361139999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="RWL-Cc-lci" firstAttribute="top" secondItem="J4k-5N-Gqh" secondAttribute="bottom" constant="10" id="F7V-Vf-8qu"/>
+                            <constraint firstItem="ouH-5Z-C8V" firstAttribute="top" secondItem="RWL-Cc-lci" secondAttribute="bottom" constant="40" id="M66-Ew-OhG"/>
                             <constraint firstItem="VI5-pf-oMV" firstAttribute="top" secondItem="ouH-5Z-C8V" secondAttribute="bottom" id="TnE-Zb-I55"/>
-                            <constraint firstItem="WCH-6g-DWf" firstAttribute="centerX" secondItem="J4k-5N-Gqh" secondAttribute="centerX" id="UwU-Hu-36B"/>
                             <constraint firstItem="RWL-Cc-lci" firstAttribute="centerX" secondItem="J4k-5N-Gqh" secondAttribute="centerX" id="Zm3-rL-E0q"/>
                             <constraint firstItem="J4k-5N-Gqh" firstAttribute="centerX" secondItem="7Sm-Df-Gsn" secondAttribute="centerX" id="bKs-Dw-PVt"/>
                             <constraint firstItem="J4k-5N-Gqh" firstAttribute="top" secondItem="BmW-ZB-dFL" secondAttribute="bottom" constant="24" id="bvY-4g-9be"/>
                             <constraint firstItem="ouH-5Z-C8V" firstAttribute="centerX" secondItem="J4k-5N-Gqh" secondAttribute="centerX" id="cwo-kJ-CY2"/>
-                            <constraint firstItem="WCH-6g-DWf" firstAttribute="top" secondItem="RWL-Cc-lci" secondAttribute="bottom" constant="25" id="jYF-1i-lKU"/>
-                            <constraint firstItem="ouH-5Z-C8V" firstAttribute="top" secondItem="WCH-6g-DWf" secondAttribute="bottom" id="vu4-KN-fJQ"/>
                         </constraints>
                     </view>
                     <connections>

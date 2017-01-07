@@ -20,7 +20,11 @@ class MenuViewController: UIViewController {
     var viewControllers = [UIViewController]()
     var menuItems = [MenuItem]()
     
-    var selectedMenuItem: MenuItem!
+    var selectedMenuItem: MenuItem!{
+        didSet {
+            self.collectionView.reloadData()
+        }
+    }
     
     // Collection View Cell boundaries
     let itemsPerRow: CGFloat = 2
@@ -61,9 +65,10 @@ class MenuViewController: UIViewController {
         let secondNavigationController = secondstoryboard.instantiateViewController(withIdentifier: "SecondNavigationController")
         
         // init menu items
-        let firstItem = MenuItem(title: "First Item", iconName: .circle, iconFilledName: .circleFilled, iconColorName: .circleColor)
+        let firstItem = MenuItem(title: "First Item", iconName: .hexagon, iconFilledName: .hexagonFilled, iconColorName: .hexagonColor)
         let secondItem = MenuItem(title: "Second Item", iconName: .triangle, iconFilledName: .triangleFilled, iconColorName: .triangleColor)
-        menuItems = [firstItem, secondItem]
+        menuItems.append(firstItem)
+        menuItems.append(secondItem)
         selectedMenuItem = firstItem
         
         // add menu item to view controllers
@@ -73,7 +78,8 @@ class MenuViewController: UIViewController {
         (firstNavigationController.childViewControllers.first as? FirstViewController)?.hamburgerViewController = hamburgerViewController
         (secondNavigationController.childViewControllers.first as? SecondViewController)?.hamburgerViewController = hamburgerViewController
         
-        viewControllers = [firstNavigationController, secondNavigationController]
+        viewControllers.append(firstNavigationController)
+        viewControllers.append(secondNavigationController)
         hamburgerViewController.contentViewController = firstNavigationController
     }
 
