@@ -72,12 +72,85 @@
                     <view key="view" contentMode="scaleToFill" id="7Sm-Df-Gsn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar" translatesAutoresizingMaskIntoConstraints="NO" id="J4k-5N-Gqh">
+                                <rect key="frame" x="125" y="44" width="125" height="125"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="125" id="6hI-oE-eRZ"/>
+                                    <constraint firstAttribute="height" constant="125" id="Uip-NH-ucm"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mary Martinez" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RWL-Cc-lci">
+                                <rect key="frame" x="132.5" y="179" width="110.5" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="M5b-LV-f85"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ouH-5Z-C8V">
+                                <rect key="frame" x="58" y="269" width="259" height="398"/>
+                                <color key="backgroundColor" red="0.2758851712" green="0.51953361139999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="259" id="iug-Oc-PGz"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="mPe-XV-6hu">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MenuItemCell" id="Crb-P2-UWd">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="8Dd-jN-NVO" id="1Hb-Zs-xHv"/>
+                                    <outlet property="delegate" destination="8Dd-jN-NVO" id="6gy-9w-dPk"/>
+                                </connections>
+                            </collectionView>
+                            <searchBar contentMode="redraw" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="WCH-6g-DWf">
+                                <rect key="frame" x="50" y="225" width="275" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="275" id="eQs-f3-tI4"/>
+                                    <constraint firstAttribute="height" constant="44" id="oQg-Qe-TQS"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                        </subviews>
                         <color key="backgroundColor" red="0.2758851712" green="0.51953361139999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="RWL-Cc-lci" firstAttribute="top" secondItem="J4k-5N-Gqh" secondAttribute="bottom" constant="10" id="F7V-Vf-8qu"/>
+                            <constraint firstItem="VI5-pf-oMV" firstAttribute="top" secondItem="ouH-5Z-C8V" secondAttribute="bottom" id="TnE-Zb-I55"/>
+                            <constraint firstItem="WCH-6g-DWf" firstAttribute="centerX" secondItem="J4k-5N-Gqh" secondAttribute="centerX" id="UwU-Hu-36B"/>
+                            <constraint firstItem="RWL-Cc-lci" firstAttribute="centerX" secondItem="J4k-5N-Gqh" secondAttribute="centerX" id="Zm3-rL-E0q"/>
+                            <constraint firstItem="J4k-5N-Gqh" firstAttribute="centerX" secondItem="7Sm-Df-Gsn" secondAttribute="centerX" id="bKs-Dw-PVt"/>
+                            <constraint firstItem="J4k-5N-Gqh" firstAttribute="top" secondItem="BmW-ZB-dFL" secondAttribute="bottom" constant="24" id="bvY-4g-9be"/>
+                            <constraint firstItem="ouH-5Z-C8V" firstAttribute="centerX" secondItem="J4k-5N-Gqh" secondAttribute="centerX" id="cwo-kJ-CY2"/>
+                            <constraint firstItem="WCH-6g-DWf" firstAttribute="top" secondItem="RWL-Cc-lci" secondAttribute="bottom" constant="25" id="jYF-1i-lKU"/>
+                            <constraint firstItem="ouH-5Z-C8V" firstAttribute="top" secondItem="WCH-6g-DWf" secondAttribute="bottom" id="vu4-KN-fJQ"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="avatarImageView" destination="J4k-5N-Gqh" id="kfO-3g-orz"/>
+                        <outlet property="centerConstraint" destination="bKs-Dw-PVt" id="uHD-hI-mQO"/>
+                        <outlet property="collectionView" destination="ouH-5Z-C8V" id="Fjh-hj-sfc"/>
+                        <outlet property="userNameLabel" destination="RWL-Cc-lci" id="Hlc-MB-npp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oKa-uS-YZn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="750" y="38"/>
+            <point key="canvasLocation" x="749.60000000000002" y="37.331334332833585"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="avatar" width="634" height="592"/>
+    </resources>
 </document>

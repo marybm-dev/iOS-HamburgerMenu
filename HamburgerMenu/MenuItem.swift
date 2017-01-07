@@ -23,6 +23,12 @@ struct MenuItem {
     }
 }
 
+extension MenuItem: Equatable {
+    static func ==(lhs: MenuItem, rhs: MenuItem) -> Bool {
+        return lhs.title == rhs.title
+    }
+}
+
 enum IconName: String {
     case circle, circleFilled, circleColor
     case triangle, triangleFilled, triangleColor
