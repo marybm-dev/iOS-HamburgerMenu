@@ -70,6 +70,9 @@ class MenuViewController: UIViewController {
         (firstNavigationController.childViewControllers.first as? FirstViewController)?.menuItem = firstItem
         (secondNavigationController.childViewControllers.first as? SecondViewController)?.menuItem = secondItem
         
+        (firstNavigationController.childViewControllers.first as? FirstViewController)?.hamburgerViewController = hamburgerViewController
+        (secondNavigationController.childViewControllers.first as? SecondViewController)?.hamburgerViewController = hamburgerViewController
+        
         viewControllers = [firstNavigationController, secondNavigationController]
         hamburgerViewController.contentViewController = firstNavigationController
     }

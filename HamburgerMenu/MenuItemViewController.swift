@@ -16,14 +16,15 @@ class MeuItemViewController: UIViewController {
         }
     }
     
+    var hamburgerBarButtonItem: UIBarButtonItem!
+    var hamburgerViewController: HamburgerViewController!
+    
+    var menuIsOpen = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        setHamburgerButton()
     }
 
     func setNavigationBarItem() -> UIButton {
@@ -41,4 +42,26 @@ class MeuItemViewController: UIViewController {
         return navBarTitleButton
     }
     
+    func setHamburgerButton() {
+        let hamburgerButton = UIButton(type: .custom)
+        hamburgerButton.setImage(#imageLiteral(resourceName: "hamburger"), for: .normal)
+        hamburgerButton.sizeToFit()
+        hamburgerButton.addTarget(self, action: #selector(MeuItemViewController.toggleMenuOpen), for: .touchUpInside)
+        
+        hamburgerBarButtonItem = UIBarButtonItem(customView: hamburgerButton)
+        navigationItem.leftBarButtonItem = hamburgerBarButtonItem
+    }
+    
+    func toggleMenuOpen() {
+        menuIsOpen = !menuIsOpen
+        
+        UIView.animate(withDuration: 0.3, animations: {
+            if self.menuIsOpen { //opening
+                self.hamburgerViewController.leftMarginConstraint.constant = self.view.frame.size.width - 50
+            } else {            // closing
+                self.hamburgerViewController.leftMarginConstraint.constant = 0
+            }
+            self.view.layoutIfNeeded()
+        })
+    }
 }
